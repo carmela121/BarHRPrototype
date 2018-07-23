@@ -566,14 +566,16 @@
             </div>
             <div class="form-item">
             <div class="input-wrapper">
-              <input ng-model="searchText" class="input" id="input-text" type="text" placeholder="Search for policies, guidelines, learning and more...">
+              <input ng-model="searchText" class="input" id="input-text" type="text" autocomplete="off" placeholder="Search for policies, guidelines, learning and more...">
               <button type="submit" class="btn-search btn btn-primary btn-sm">Search</button>
             </div>
           </div>
-      
-      <select>
-        <option>this</option>
+      <div ng-repeat="policy in policies | filter:searchText">
+      <select style="color: white" >
+        <option>{{policy.name}}</option>
+        <option></option>
       </select>
+    </div>
           </div>
         </div>
         
