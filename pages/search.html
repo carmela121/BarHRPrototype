@@ -1,0 +1,136 @@
+<section>
+	<div class="main" role="main" id="main">
+		<div class="container container-large">
+  			<div class="row">
+    			<div id="side-menu" class="col-4">
+
+    		
+					<div class="search-header underlined"><h2 class="h4 category-header--small h2 category-header--large">Filters</h2></div>
+					<ul class="accordion js-accordion">
+						<li>
+							<a class="accordion-heading-link country" href="#accordion-content-1">United Kingdom</a>
+		
+								<div class="accordion-content-wrapper" id="accordion-content-1" data-accordion-open>
+									<div class="accordion-content">
+										<a class="nav-link ml-3 my-1 division" href="#item-1-1">Barclays UK</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays international</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-1">COO & Functions</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays non-core</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Head office</a>
+									</div>
+								</div>
+						</li>
+						<li>
+		
+							<a class="accordion-heading-link country" href="#accordion-content-1">Gibraltar</a>
+	
+								<div class="accordion-content-wrapper" id="accordion-content-1">
+									<div class="accordion-content">
+										<a class="nav-link ml-3 my-1 division" href="#item-1-1">Barclays UK</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays international</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-1">COO & Functions</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays non-core</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Head office</a>
+									</div>
+								</div>
+						</li>
+						<li>
+	
+							<a class="accordion-heading-link country" href="#accordion-content-1">India</a>
+
+								<div class="accordion-content-wrapper" id="accordion-content-1">
+									<div class="accordion-content">
+										<a class="nav-link ml-3 my-1 division" href="#item-1-1">Barclays UK</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays international</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-1">COO & Functions</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays non-core</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Head office</a>
+									</div>
+								</div>
+						</li>
+						<li>
+	
+							<a class="accordion-heading-link country" href="#accordion-content-1">USA</a>
+
+								<div class="accordion-content-wrapper" id="accordion-content-1">
+									<div class="accordion-content">
+										<a class="nav-link ml-3 my-1 division" href="#item-1-1">Barclays UK</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays international</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-1">COO & Functions</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays non-core</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Head office</a>
+									</div>
+								</div>
+						</li>
+						<li>
+	
+							<a class="accordion-heading-link country" href="#accordion-content-1">Italy</a>
+
+								<div class="accordion-content-wrapper" id="accordion-content-1">
+									<div class="accordion-content">
+										<a class="nav-link ml-3 my-1 division" href="#item-1-1">Barclays UK</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays international</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-1">COO & Functions</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Barclays non-core</a>
+								    	<a class="nav-link ml-3 my-1 division" href="#item-1-2">Head office</a>
+									</div>
+								</div>
+						</li>
+	
+					</ul>
+
+						<div>
+							<a href="">Show more</a>
+						</div>
+				
+
+    			</div>
+    			<div ng-show= "searchResult && searchText" class="col-8 search-content">
+	    		<div ng-repeat= "policy in policiesToFilter | filter: searchQuery" >
+	      			<div class="search-header underlined"><h2 id="count" class="h4 category-header--small h2 category-header--large"></h2></div>
+	      			<ul>
+	      				<li class="page1">
+			      			<h5 class="search-results"><a href="">{{ policy.name }}</a></h5>
+					    	<a class="search-tags left" href="">{{policy.tags[0]}}</a>
+					    	<a class="search-tags right" href="">{{policy.tags[1]}}</a>
+					    	<div class="policy-caption">
+			    				<p>{{policy.caption}}</p>
+			    			</div>
+			    		</li>
+			    		
+	    			</ul>
+	    		</div>
+	    		<div class="no-results" ng-show="(policiesToFilter | filter:searchQuery).length == 0">
+	      			<img src="icons/icon_search_large.png">
+	      			<p>Unfortunately we can't find any results for 'Leave' in Gibraltar for Barclays international please try within: </p>
+	      			<a href="">Barclays non-core</a>
+	    			
+	    		</div>
+	    			
+	    		</div>
+	    		</div>
+
+	    		
+
+  			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+   
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link one" href="#">1</a></li>
+    <li class="page-item"><a class="page-link two" href="#">2</a></li>
+    <li class="page-item"><a class="page-link three" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+   
+  </ul>
+</nav>
+
