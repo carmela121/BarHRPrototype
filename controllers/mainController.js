@@ -1,5 +1,7 @@
 
-	barHrApp.controller('mainController', function($scope, $filter) {
+	barHrApp.controller('mainController', function($scope, $filter, $location) {
+
+		$scope.showSecondInput = true;
 		$scope.countries = [{
 			country: "United Kingdom",
 			division: 
@@ -68,6 +70,11 @@
 
 
     // }
+
+    $scope.go = function (path) {
+    	console.log(path)
+  		$location.path(path);
+	};
     $scope.items2 = $scope.policies;
     
     $scope.$watch('searchQuery', function(val){ 
@@ -105,7 +112,10 @@
 
 	barHrApp.controller('searchController', function($scope) {
 
+		$scope.showSecondInput = false;
+		$scope.policies = $scope.$parent.policies;
 
+console.log($scope.policies)
 
 		 // $scope.$parent.search()
 

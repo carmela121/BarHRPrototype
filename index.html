@@ -560,7 +560,7 @@
 
   <main class="main" role="main" id="main-content">
 
-    <section class="wrapper dark-container" style="background-color: #00395D; backgroound-size: cover" >
+    <section ng-show="showSecondInput" class="wrapper dark-container" style="background-color: #00395D; backgroound-size: cover" >
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-12">
@@ -573,13 +573,13 @@
             <div class="form-item">
             <div class="input-wrapper">
               <input ng-model="searchQuery" class="input" id="input-text" type="text" placeholder="Search for policies, guidelines, learning and more...">
-              <button type="submit" class="btn-search btn btn-primary btn-sm">Search</button>
+              <button ng-click="go('/search')" type="submit" class="btn-search btn btn-primary btn-sm">Search</button>
             </div>
           </div>
           <div id="select" class="col-xs-6">
     
             <ul>
-              <li ng-repeat="policy in policies"><a>{{policy.name}}</a></li>
+              <li ng-repeat="policy in policies"><a href="">{{policy.name}}</a></li>
               <li><a>View all</a></li>
             </ul>
         
@@ -592,9 +592,9 @@
       </div>
     </section>
 
-  
-    <!-- angular templating -->
-		<!-- this is where content will be injected --
+ <!-- 
+    angular templating
+		this is where content will be injected -->
    
     
 

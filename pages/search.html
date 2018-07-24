@@ -86,7 +86,7 @@
 
     			</div>
     			<div ng-show= "searchResult && searchText" class="col-8 search-content">
-	    		<div ng-repeat= "policy in policiesToFilter | filter: searchQuery" >
+	    		<div ng-repeat= "policy in policies" >
 	      			<div class="search-header underlined"><h2 id="count" class="h4 category-header--small h2 category-header--large"></h2></div>
 	      			<ul>
 	      				<li class="page1">
@@ -100,7 +100,7 @@
 			    		
 	    			</ul>
 	    		</div>
-	    		<div class="no-results" ng-show="(policiesToFilter | filter:searchQuery).length == 0">
+	    		<div ng-show="(policies).length == 0">
 	      			<img src="icons/icon_search_large.png">
 	      			<p>Unfortunately we can't find any results for 'Leave' in Gibraltar for Barclays international please try within: </p>
 	      			<a href="">Barclays non-core</a>
