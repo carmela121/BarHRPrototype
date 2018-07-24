@@ -1,7 +1,8 @@
 	// create the module and name it barHrApp
 	var barHrApp = angular.module('barHrApp', ['ngRoute']);
 
-
+    
+        
 	// configure our routes
 	barHrApp.config(function($routeProvider) {
 		$routeProvider

@@ -1,7 +1,5 @@
-	
 
-	barHrApp.controller('mainController', function($scope) {
-
+	barHrApp.controller('mainController', function($scope, $filter) {
 		$scope.countries = [{
 			country: "United Kingdom",
 			division: 
@@ -62,28 +60,34 @@
 			division:"Barclays UK"
 			}]
 		// create a message to display in our view
-			   $scope.search=function(){
+			 //   $scope.search=function(){
 		  
-        $scope.searchQuery = angular.copy($scope.searchText);
-        $scope.policiesToFilter=$scope.policies;
-        $scope.searchResult=true;
-    }
+    //     $scope.searchQuery = angular.copy($scope.searchText);
+    //     $scope.policiesToFilter=$scope.policies;
+    //     $scope.searchResult=true;
 
 
+    // }
+    $scope.items2 = $scope.policies;
+    
+    $scope.$watch('searchQuery', function(val){ 
+        $scope.policies = $filter('filter')($scope.items2, val);
+    });
+
+    // $scope.search();
 
     $scope.vis = {'visibility': 'hidden'};
 
     $scope.searching = function() {
-    	if($scope.searchText.length > 0) {
+    	if($scope.policies) {
     		$scope.vis = {'visibility': 'visible'};  		
     	} else {
     		$scope.vis={'visibility': 'hidden'};
     	}
     }
 
-
 		$scope.message = 'Everyone come and see how good I look!';
-	});
+	})
 
 	barHrApp.controller('aboutController', function($scope) {
 		$scope.message = 'Look! I am an about page.';
@@ -101,7 +105,9 @@
 
 	barHrApp.controller('searchController', function($scope) {
 
-		   $scope.$parent.search();
+
+
+		 // $scope.$parent.search()
 
 
 
@@ -109,7 +115,8 @@
 
 
 
-    		
+    
+
 
            
 
