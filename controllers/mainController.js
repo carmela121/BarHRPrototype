@@ -1,7 +1,11 @@
 
 	barHrApp.controller('mainController', function($scope, $filter, $location) {
-
 		$scope.showSecondInput = true;
+			if($location.$$url == '/') {
+				$scope.showSecondInput = true;
+			} else {
+				$scope.showSecondInput = false;
+			}
 		$scope.countries = [{
 			country: "United Kingdom",
 			division: 
@@ -72,9 +76,17 @@
     // }
 
     $scope.go = function (path) {
-    	console.log(path)
+    	
   		$location.path(path);
+    	if(path == ('/search')) {
+    		$scope.showSecondInput = false;
+    	} else {
+    		$scope.showSecondInput = true;
+    	}
+
 	};
+
+
     $scope.items2 = $scope.policies;
     
     $scope.$watch('searchQuery', function(val){ 
@@ -86,6 +98,7 @@
     $scope.vis = {'visibility': 'hidden'};
 
     $scope.searching = function() {
+
     	if($scope.policies) {
     		$scope.vis = {'visibility': 'visible'};  		
     	} else {
@@ -112,7 +125,8 @@
 
 	barHrApp.controller('searchController', function($scope) {
 
-		$scope.showSecondInput = false;
+	
+	
 		$scope.policies = $scope.$parent.policies;
 
 console.log($scope.policies)

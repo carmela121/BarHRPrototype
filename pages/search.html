@@ -85,7 +85,7 @@
 				
 
     			</div>
-    			<div ng-show= "searchResult && searchText" class="col-8 search-content">
+    			<div ng-controller="searchController" class="col-8 search-content">
 	    		<div ng-repeat= "policy in policies" >
 	      			<div class="search-header underlined"><h2 id="count" class="h4 category-header--small h2 category-header--large"></h2></div>
 	      			<ul>
